@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Produits de l'opportunité">
+        <template if:true={noData}>
+            <div class="slds-p-around_medium">Aucun produit associé à cette opportunité.</div>
+        </template>
+        <template if:false={noData}>
+            <lightning-datatable
+                key-field="Id"
+                data={opportunityRows}
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
